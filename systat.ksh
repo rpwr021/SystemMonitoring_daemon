@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-#auth rpawar@amdocs.com
+#auth rpawar.021@gmail.com
 # USR="aimadm90"
 
 
@@ -14,7 +14,7 @@ export dFLAG1=0
 export dFLAG2=0
 export nFLAG=0
 
-. /pil_user2/pil/users/piltools/SysStat/pil_systat.config
+. ${HOME}/SysStat/systat.config
 
 # font colours
 export GREEN='<font color="#00ff00">'

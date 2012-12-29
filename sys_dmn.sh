@@ -10,7 +10,8 @@
 export lockfile=/tmp/systat/smlock
 export STARTPIDFILE=/tmp/systat/pidf
 export RETVAL=0
-#export STIME=1800
+export RHOME=`cd ~root;pwd`
+
 
 initx() 
 {
@@ -26,7 +27,7 @@ start() {
                 exit 2; 
         else 
 						/bin/touch "$lockfile"  "$STARTPIDFILE" > /dev/null 2>&1
-						nohup ${RHOME}/SysStat/pil_systat service  > /dev/null 2>&1 &
+						nohup ${RHOME}/SysStat/systat service  > /dev/null 2>&1 &
 						PID=$!
 						echo $"pil_systat Started : PID is $PID" 
 						RETVAL=$?
@@ -38,14 +39,15 @@ start() {
         fi
 		
 	
+	
 }
 
 stopx() {
 	
 	
 	if [[ -s $STARTPIDFILE ]] ; then
-                echo $"Stopping pil_systat  [OK]."
-                killproc -p $STARTPIDFILE /pil_user2/pil/users/piltools/SysStat/pil_systat
+                echo $"Stopping systat  [OK]."
+                killproc -p $STARTPIDFILE ${RHOME}/SysStat/pil_systat
 				/bin/rm "$lockfile"  "$STARTPIDFILE" > /dev/null 2>&1
 				kill -9 `ps -ef  | grep -vE grep | grep sys_dmn | cut -d " " -f2`      >/dev/null 2>&1
 				kill -9 `ps -ef  | grep -vE grep | grep systat | cut -d " " -f2`      >/dev/null 2>&1

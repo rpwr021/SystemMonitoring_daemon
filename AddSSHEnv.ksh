@@ -2,15 +2,10 @@
 #-----------------------------------------------
 #
 # NAME: AddSSHEnv.ksh
-#
+#auth rpawar.021@gmail.com
 # PURPOSE: Add SSH public key to remote UNIX user account
-#
-# AUTHOR: David Sasson (davidsa@amdocs.com)
-#
-# DATE: 02.11.2006
-#
 #-----------------------------------------------
-#
+
 RUSER=$1
 RHOST=$2
 
