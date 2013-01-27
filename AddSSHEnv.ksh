@@ -1,9 +1,9 @@
 #!/usr/bin/ksh -f
 #-----------------------------------------------
 #
-# NAME: AddSSHEnv.ksh
+#NAME: AddSSHEnv.ksh
 #auth rpawar.021@gmail.com
-# PURPOSE: Add SSH public key to remote UNIX user account
+#PURPOSE: Add SSH public key to remote UNIX user account
 #-----------------------------------------------
 
 RUSER=$1
