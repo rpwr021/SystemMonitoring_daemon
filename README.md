@@ -22,4 +22,8 @@ steps to configure (recommended to run these as sudo or root)
 * Check logs in 
 	/tmp/lock/subsys/logs/sysRun.log
 
+* Also it generates mailer under,  mostly if there are no issues then it wont have any content , but u can use it to send mails   
+	/tmp/info.html 
 
+
+Also please go ahead if u have any improvements , let me know about em 
