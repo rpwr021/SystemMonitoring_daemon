@@ -13,7 +13,11 @@ steps to configure (recommended to run these as sudo or root)
 * for same user and host/s run AddSSHEnv.sh
 	to add remote ssh keys to configure all slaves for monitoring daemon , passwordless ssh 
 
-*finally run 
+
+* Now run .. lookout for errors 
+	./configure_systat.sh
+
+* finally run 
 	  to launch daemon 
 		sudo service rsys_dmn start	
 	  to Stop 
