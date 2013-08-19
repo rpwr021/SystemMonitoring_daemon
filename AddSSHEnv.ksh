@@ -1,4 +1,4 @@
-#!/usr/bin/ksh -f
+#!/bin/bash -f
 #-----------------------------------------------
 #
 #NAME: AddSSHEnv.ksh
