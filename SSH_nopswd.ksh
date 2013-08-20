@@ -1,7 +1,7 @@
 #!/bin/bash -f
 #-----------------------------------------------
 #
-#NAME: AddSSHEnv.ksh
+#NAME: SSH_nopswd.ksh
 #auth rpawar.021@gmail.com
 #PURPOSE: Add SSH public key to remote UNIX user account
 #-----------------------------------------------
@@ -11,7 +11,7 @@ RHOST=$2
 
 	if [ -z "${RHOST}" ]
 	then
-		echo "\nUsage: $0 remoteUserName remoteHostName\n"
+		echo "\n Usage: $0 User hostName"
 		
 		exit 22
 	fi
