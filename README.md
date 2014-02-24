@@ -10,7 +10,7 @@ steps to configure (recommended to run these as sudo or root)
 * Update User and hostnames (U can add multiple hosts && after installation configuration is picked up from under /opt/SysStat/r_systat.config)
 	r_systat.config
 
-* for same user and host/s run AddSSHEnv.sh
+* for same user and host/s run passwordless.sh
 	to add remote ssh keys to configure all slaves for monitoring daemon , passwordless ssh 
 
 
