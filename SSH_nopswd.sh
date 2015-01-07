@@ -1,15 +1,10 @@
 #!/bin/bash -f
 #-----------------------------------------------
-#
-#NAME: SSH_nopswd.ksh
-#auth rpawar.021@gmail.com
-#PURPOSE: Add SSH public key to remote UNIX user account
-#-----------------------------------------------
 
-RUSER=$1
-RHOST=$2
+thost=$1
+tuser=$2
 
-	if [ -z "${RHOST}" ]
+	if [ -z "${thost}" ]
 	then
 		echo "\n Usage: $0 User hostName"
 		
@@ -31,18 +26,17 @@ RHOST=$2
 
 	fi
 
-	echo "SSH configured for ${LOGNAME} OK."
-	echo "Processing ${RUSER}..."
-	scp ~/.ssh/id_rsa.pub ${RUSER}@${RHOST}:id_rsa.pub.hotfix
+	echo "SSH configured"
+	scp ~/.ssh/id_rsa.pub ${tuser}@${thost}:id_rsa.pub.hotfix
 	STATUS=$?
 
 	if [[ ${STATUS} -ne 0 ]]
 	then
-		echo "scp of public key file to ${RUSER}@${RHOST} FAILED!"
+		echo "scp of public key file to ${tuser}@${thost} FAILED!"
 	exit ${STATUS}
 	fi
 
-	ssh ${RUSER}@${RHOST} /bin/ksh <<EOT
+	ssh ${tuser}@${thost} /bin/ksh <<EOT
 	if [ ! -d \${HOME}/.ssh ]
 	then
 		mkdir -p \${HOME}/.ssh	
@@ -56,9 +50,9 @@ EOT
 	STATUS=$?
 	if [[ ${STATUS} -ne 0 ]]
 	then
-		echo "Adding SSH public key to user ${RUSER} FAILED!."
+		echo "Setting up passwordless SSH for  ${RUSER} FAILED!."
 		exit ${STATUS}
 	fi
-	echo "Added SSH public key to user ${RUSER}."
+	echo "Passwordless SSH set for  ${RUSER}."
 #
 	
