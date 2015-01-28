@@ -1,5 +1,5 @@
 #!/bin/bash -f
-#-----------------------------------------------
+
 
 thost=$1
 tuser=$2
@@ -36,7 +36,7 @@ tuser=$2
 	exit ${STATUS}
 	fi
 
-	ssh ${tuser}@${thost} /bin/ksh <<EOT
+	ssh ${tuser}@${thost} /bin/ksh <<ED
 	if [ ! -d \${HOME}/.ssh ]
 	then
 		mkdir -p \${HOME}/.ssh	
@@ -45,14 +45,15 @@ tuser=$2
 	cat id_rsa.pub.hotfix >> \${HOME}/.ssh/authorized_keys
 	chmod 600 \${HOME}/.ssh/authorized_keys
 	chmod 755 \${HOME}
-EOT
+ED
 
-	STATUS=$?
-	if [[ ${STATUS} -ne 0 ]]
-	then
-		echo "Setting up passwordless SSH for  ${RUSER} FAILED!."
-		exit ${STATUS}
-	fi
-	echo "Passwordless SSH set for  ${RUSER}."
-#
+STATUS=$?
+	
+ if [[ ${STATUS} -ne 0 ]]
+ then
+ 	echo "Setting up passwordless SSH for  ${RUSER} FAILED!."
+  	exit ${STATUS}
+  fi
+ 
+echo "Passwordless SSH set for  ${RUSER}."
 	
