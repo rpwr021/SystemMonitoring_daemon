@@ -5,7 +5,7 @@ then
 	mkdir -p /tmp/lock/subsys/logs /opt/SysStat ~/SysStat/
 	chmod -R 777 /tmp/lock/*
 	
-	for i in  AddSSHEnv.ksh  configure_systat.sh  README.md  rsys_dmn  r_systat  r_systat.config 
+	for i in  nopswd_con.sh  configure_systat.sh  README.md  rsys_dmn  r_systat  r_systat.config 
 	do
 	cp -vf  $i ~/SysStat/
 	done 
